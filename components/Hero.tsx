@@ -1,5 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { BOOK_A_CALL_URL } from "@/constants";
 
 export default function Hero() {
   return (
@@ -12,11 +14,20 @@ export default function Hero() {
           Crafting outstanding software experiences that inspire confidence,
           growth & success.
         </p>
-        <div className='flex justify-center'>
-          <a className='flex mt-6 w-[150px] items-center p-4 bg-black text-white hover:bg-[#00df9a] m-2 cursor-pointer duration-300 hover:text-black'>
+        <div className='flex flex-col justify-center items-center md:flex-row'>
+          <a
+            target='_blank'
+            href={BOOK_A_CALL_URL}
+            className='flex mt-6 w-[150px] items-center p-4 bg-black text-white hover:bg-[#00df9a] m-2 cursor-pointer duration-300 hover:text-black'
+          >
             <span className='mr-3'>Book a call</span>
             <AiOutlineArrowRight size={20} />
           </a>
+          <Link href='#our-work' passHref legacyBehavior>
+            <a className='flex mt-6 w-[150px] items-center justify-center p- text-neutral-500 hover:text-black m-2 cursor-pointer duration-30'>
+              View our work
+            </a>
+          </Link>
         </div>
       </div>
     </div>

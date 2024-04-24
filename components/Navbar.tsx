@@ -1,7 +1,8 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
+import { BOOK_A_CALL_URL } from "@/constants";
 import {
   AiOutlineClose,
   AiOutlineMenu,
@@ -28,8 +29,7 @@ const Navbar = () => {
   return (
     <header className='h-24 max-w-[1240px] w-[100%] mx-auto'>
       <nav className='flex justify-between items-center mx-auto px-4 text-black'>
-        {/* Logo */}
-        <Link href=''>
+        <Link href='/'>
           <Image
             height={90}
             width={180}
@@ -50,10 +50,16 @@ const Navbar = () => {
           ))}
           <li
             key='contact-us'
-            className='flex items-center p-4 bg-black text-white hover:bg-[#00df9a] m-2 cursor-pointer duration-300 hover:text-black'
+            className=' bg-black text-white hover:bg-[#00df9a] m-2 cursor-pointer duration-300 hover:text-black'
           >
-            <span className='mr-3'>Book a call</span>
-            <AiOutlineArrowRight size={20} />
+            <a
+              target='_blank'
+              href={BOOK_A_CALL_URL}
+              className='flex items-center p-4'
+            >
+              <span className='mr-3'>Book a call</span>
+              <AiOutlineArrowRight size={20} />
+            </a>
           </li>
         </ul>
 
